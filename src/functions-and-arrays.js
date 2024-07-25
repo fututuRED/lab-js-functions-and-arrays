@@ -6,7 +6,7 @@ function maxOfTwoNumbers(x, y) {
     return y;
   }
 }
-
+const maxOfTwoNumbers = (a, b) => (a > b ? a : b);
 // Iteration 2 | Find the Longest Word
 const words = [
   "mystery",
@@ -19,21 +19,16 @@ const words = [
 ];
 
 function findLongestWord(words) {
-  let longestWordLength = 0;
-  let longestWord = "";
-  for (let i = 0; i < words.length; i++) {
-    const oneWord = words[i];
-
-    if (words.length === 0) {
-      return null;
-    }
-
-    if (oneWord.length > longestWordLength) {
-      longestWordLength = oneWord.lenght;
-      longestWord = oneWord;
-    }
-    return longestWord;
+  if (words.length === 0) {
+    return null;
   }
+  let longestWord = words[0];
+  for (let i = 1; i < words.length; i++) {
+    if (words[i].length > longestWord.length) {
+      longestWord = words[i];
+    }
+  }
+  return longestWord;
 }
 
 // Iteration 3 | Sum Numbers
@@ -86,3 +81,8 @@ function doesWordExist(arrayOfWords, searchedWord) {
     }
   }
 }
+
+// function doesWordExist(arrayOfWords, searchedWord) {
+//   if (arrayOfWords.length === 0) return null;
+//   return arrayOfWords.includes(searchedWord);
+// }
