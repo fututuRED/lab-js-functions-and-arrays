@@ -53,7 +53,14 @@ function sumNumbers(arrayOfNumbers) {
 // Iteration 4 | Numbers Average
 const numbers2 = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(arrayOfNumbers) {
+  if (arrayOfNumbers.length === 0) {
+    return 0;
+  }
+  const total = sumNumbers(arrayOfNumbers);
+  const average = (total / arrayOfNumbers.length).toFixed(2);
+  return Number(average);
+}
 
 // Iteration 5 | Find Elements
 const words2 = [
@@ -67,4 +74,15 @@ const words2 = [
   "disobedience",
 ];
 
-function doesWordExist() {}
+function doesWordExist(arrayOfWords, searchedWord) {
+  if (arrayOfWords.length === 0) {
+    return null;
+  }
+  for (let i = 0; i < arrayOfWords.length; i++) {
+    if (searchedWord !== arrayOfWords[i]) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+}
